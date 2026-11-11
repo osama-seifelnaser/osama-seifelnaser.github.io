@@ -1,0 +1,343 @@
+<title>Osama Seif-Elnaser</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Osama Seif-Elnaser, Mechanical Engineer. HVAC, firefighting, plumbing and medical gas design. Seif-Elnaser Group.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,600;0,700;1,400;1,500&display=swap">
+<style>
+/* Layout: one centred column. Logo-led hero, four action buttons, then CV sections as ruled lists.
+   A branded splash (the logo assembling) covers the page for about two seconds on load. */
+:root {
+  --bg: #F4F6FA;
+  --surface: #FFFFFF;
+  --ink: #0E1B33;
+  --muted: #566783;
+  --brand: #0B2A5B;
+  --steel: #5B7A99;
+  --red: #C8202F;
+  --tri-a: #F0303F;
+  --tri-b: #8E0B1A;
+  --line: #D8DFEB;
+  --chip: #E8EDF6;
+  --f-display: 'Lora', Georgia, 'Times New Roman', serif;
+  --f-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0A1325; --surface: #111D36; --ink: #E7ECF6; --muted: #9DACC7; --brand: #E7ECF6; --steel: #8FA6C6;
+    --red: #FF5565; --tri-a: #FF4D5E; --tri-b: #B01B2B; --line: #22324F; --chip: #17243F; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0A1325; --surface: #111D36; --ink: #E7ECF6; --muted: #9DACC7; --brand: #E7ECF6; --steel: #8FA6C6;
+  --red: #FF5565; --tri-a: #FF4D5E; --tri-b: #B01B2B; --line: #22324F; --chip: #17243F; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 36px 28px;
+}
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; border-radius: 6px; }
+
+/* ---------- logo (shared by splash and hero) ---------- */
+.logo {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+  font-size: min(22px, calc((100vw - 44px) / 26));
+  line-height: 1;
+}
+.logo .tri { align-self: center; width: 2.3em; height: 2em; margin-bottom: .7em; display: block; }
+.logo .rule { height: .07em; background: var(--brand); transform-origin: center; }
+.logo .wm {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: 2.7em;
+  letter-spacing: .09em;
+  padding: .3em 0 .28em .09em;
+  text-align: center;
+  white-space: nowrap;
+  color: var(--brand);
+}
+.logo .grp {
+  align-self: center;
+  margin-top: .85em;
+  padding-left: .75em;
+  font-weight: 500;
+  font-size: .95em;
+  letter-spacing: .75em;
+  color: var(--steel);
+}
+.logo .sub {
+  align-self: center;
+  margin-top: 1.25em;
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: 1.02em;
+  color: var(--steel);
+  white-space: nowrap;
+}
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+/* ---------- splash ---------- */
+.splash {
+  position: fixed; inset: 0; z-index: 50;
+  background: var(--bg);
+  display: grid; place-content: center; justify-items: center; gap: 44px;
+  padding: env(safe-area-inset-top, 0px) 16px env(safe-area-inset-bottom, 0px);
+  animation: splashOut .5s ease 2.25s forwards;
+}
+.splash .logo { font-size: min(26px, calc((100vw - 44px) / 26)); }
+.splash .tri { animation: drop .75s cubic-bezier(.2, .9, .3, 1.2) .1s backwards; }
+.splash .rule { animation: grow .6s ease .65s backwards; }
+.splash .wm { animation: reveal .8s ease .75s backwards; }
+.splash .grp { animation: fadeUp .5s ease 1.3s backwards; }
+.splash .sub { animation: fadeUp .5s ease 1.55s backwards; }
+.splash .bar { width: min(180px, 50vw); height: 3px; border-radius: 3px; background: var(--chip); overflow: hidden; }
+.splash .bar i { display: block; height: 100%; width: 100%; background: var(--red); transform-origin: left; animation: load 2s cubic-bezier(.4, 0, .2, 1) backwards; }
+@keyframes drop { 0% { opacity: 0; transform: translateY(-1.4em) scale(.6); } 65% { opacity: 1; transform: translateY(.1em) scale(1.06); } 100% { opacity: 1; transform: none; } }
+@keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes reveal { from { opacity: 0; letter-spacing: .3em; } to { opacity: 1; letter-spacing: .09em; } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(.5em); } to { opacity: 1; transform: none; } }
+@keyframes load { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes splashOut { to { opacity: 0; visibility: hidden; } }
+
+/* ---------- hero ---------- */
+.hero { display: grid; justify-items: center; gap: 22px; padding-bottom: 30px; border-bottom: 1px solid var(--line); }
+.chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.chip { padding: 5px 13px; border-radius: 999px; background: var(--chip); font-size: .8rem; font-weight: 500; letter-spacing: .03em; }
+.btns { width: 100%; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 6px; }
+@media (min-width: 640px) { .btns { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.btn {
+  display: flex; align-items: center; justify-content: center; gap: 9px;
+  min-height: 50px; padding: 0 12px; border-radius: 12px;
+  border: 1px solid var(--line); background: var(--surface);
+  text-decoration: none; font-weight: 600; font-size: .95rem;
+  transition: transform .15s ease, border-color .15s ease;
+}
+.btn:hover { transform: translateY(-1px); border-color: var(--steel); }
+.btn svg { width: 19px; height: 19px; flex: none; }
+.btn.primary { background: var(--brand); color: var(--bg); border-color: var(--brand); }
+
+/* ---------- sections ---------- */
+main { display: grid; gap: 40px; padding-top: 34px; }
+h2 {
+  display: flex; align-items: center; gap: 10px;
+  margin: 0 0 16px;
+  font-family: var(--f-display); font-weight: 700; font-size: 1.4rem; line-height: 1.2;
+  text-wrap: balance;
+}
+h2::before {
+  content: ""; width: 14px; height: 12px; flex: none;
+  background: linear-gradient(135deg, var(--tri-a), var(--tri-b));
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+h3 { margin: 0; font-size: 1.02rem; line-height: 1.35; }
+p { margin: 0; }
+.lede { max-width: 65ch; }
+.lede + .lede { margin-top: 12px; }
+.meta { color: var(--muted); font-size: .88rem; }
+
+.tools { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
+.tool { min-width: 0; padding: 16px 16px 18px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; display: grid; gap: 8px; align-content: start; }
+.tool .tag { font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--red); }
+.tool p { font-size: .93rem; color: var(--muted); }
+
+.rows { display: grid; }
+.row { display: grid; grid-template-columns: 168px minmax(0, 1fr); gap: 4px 16px; padding: 12px 0; border-top: 1px solid var(--line); }
+.row:last-child { border-bottom: 1px solid var(--line); }
+.row dt { font-weight: 600; font-size: .92rem; }
+.row dd { margin: 0; color: var(--muted); }
+@media (max-width: 520px) { .row { grid-template-columns: minmax(0, 1fr); } }
+
+.item { padding: 14px 0; border-top: 1px solid var(--line); display: grid; gap: 6px; }
+.item:last-child { border-bottom: 1px solid var(--line); }
+.item ul { margin: 6px 0 0; padding-left: 1.15em; display: grid; gap: 6px; max-width: 70ch; }
+.item li::marker { color: var(--red); }
+
+.contact { display: grid; }
+.crow { display: grid; grid-template-columns: 90px minmax(0, 1fr) auto; align-items: center; gap: 12px; padding: 12px 0; border-top: 1px solid var(--line); }
+.crow:last-child { border-bottom: 1px solid var(--line); }
+.crow .k { font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.crow .v { overflow-wrap: anywhere; user-select: all; }
+.copy { font: inherit; font-size: .82rem; font-weight: 600; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+.copy:hover { border-color: var(--steel); }
+@media (max-width: 420px) { .crow { grid-template-columns: minmax(0, 1fr) auto; } .crow .k { grid-column: 1 / -1; margin-bottom: -6px; } }
+
+footer { margin-top: 44px; text-align: center; font-size: .82rem; color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  .splash { animation-duration: .3s; animation-delay: .7s; }
+  .splash * { animation: none !important; }
+  .btn { transition: none; }
+}
+</style>
+
+<div class="splash" id="splash" aria-hidden="true">
+  <div class="logo">
+    <svg class="tri" viewBox="0 0 60 52"><defs><linearGradient id="tg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--tri-a)"/><stop offset="1" stop-color="var(--tri-b)"/></linearGradient></defs><path d="M3 2 H57 Q60 2 58.4 4.6 L31.6 49.4 Q30 52 28.4 49.4 L1.6 4.6 Q0 2 3 2Z" fill="url(#tg1)"/></svg>
+    <div class="rule"></div>
+    <div class="wm">SEIF-ELNASER</div>
+    <div class="rule"></div>
+    <div class="grp">GROUP</div>
+    <div class="sub">Eng. Osama Seif-Elnaser&nbsp;&nbsp;|&nbsp;&nbsp;Mechanical Engineer</div>
+  </div>
+  <div class="bar"><i></i></div>
+</div>
+
+<div class="page">
+  <header class="hero">
+    <div class="logo" role="img" aria-label="Seif-Elnaser Group. Eng. Osama Seif-Elnaser, Mechanical Engineer">
+      <svg class="tri" viewBox="0 0 60 52" aria-hidden="true"><defs><linearGradient id="tg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--tri-a)"/><stop offset="1" stop-color="var(--tri-b)"/></linearGradient></defs><path d="M3 2 H57 Q60 2 58.4 4.6 L31.6 49.4 Q30 52 28.4 49.4 L1.6 4.6 Q0 2 3 2Z" fill="url(#tg2)"/></svg>
+      <div class="rule"></div>
+      <div class="wm" aria-hidden="true">SEIF-ELNASER</div>
+      <div class="rule"></div>
+      <div class="grp" aria-hidden="true">GROUP</div>
+      <div class="sub" aria-hidden="true">Eng. Osama Seif-Elnaser&nbsp;&nbsp;|&nbsp;&nbsp;Mechanical Engineer</div>
+    </div>
+    <div class="chips" aria-label="Specialties">
+      <span class="chip">HVAC</span><span class="chip">Firefighting</span><span class="chip">Plumbing</span><span class="chip">Medical Gas</span>
+    </div>
+    <nav class="btns" aria-label="Contact">
+      <a class="btn primary" href="https://wa.me/201559917698">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-8l-5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/><path d="M8 10.5h8M8 13.5h5"/></svg>
+        WhatsApp
+      </a>
+      <a class="btn" href="tel:+201559917698">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+        Call
+      </a>
+      <a class="btn" href="mailto:osma.eng.pro.free@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        Email
+      </a>
+      <a class="btn" href="https://www.linkedin.com/in/osama-seif-elnaser-7b58b3240/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>
+        LinkedIn
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Profile</h2>
+      <p class="lede">Mechanical Engineer, Al-Azhar University (Power Engineering), class of 2026. I design MEP systems: HVAC, firefighting, plumbing and medical gas.</p>
+      <p class="lede">I have worked on hospital, villa and office building designs, with a very good command of AutoCAD and Revit, working knowledge of HAP, Duct Sizer, Pipe Sizer and Elite, and a solid grounding in ASHRAE, SMACNA, NFPA and IPC. I also build my own Revit add-ins in C# and HVAC engineering tools.</p>
+    </section>
+
+    <section>
+      <h2>Engineering tools I built</h2>
+      <div class="tools">
+        <article class="tool">
+          <span class="tag">Windows desktop app</span>
+          <h3>HAP to Excel</h3>
+          <p>Reads room and zone load data from Carrier HAP output and exports organized Excel schedules, so zone loads are not typed in again by hand.</p>
+        </article>
+        <article class="tool">
+          <span class="tag">Web simulator</span>
+          <h3>Variable Primary Flow, Chilled Water Simulator</h3>
+          <p>Models zone flow rates and loads, pump VFD speed, and the pump curve against the system curve. Flags starved zones and pump saturation.</p>
+        </article>
+        <article class="tool">
+          <span class="tag">Revit add-in · 2020 to 2027</span>
+          <h3>Clash Resolver</h3>
+          <p>Resolves pipe, duct and cable tray clashes in two clicks. It splits the element and reconnects it around the obstacle at the angle, direction and offset you set, in 3D and every other view.</p>
+        </article>
+        <article class="tool">
+          <span class="tag">Revit add-in · 2022 to 2027</span>
+          <h3>Print &amp; Line Weights</h3>
+          <p>Exports sheets to PDF with full control of line weights per category and per Duct and Piping System Type.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <dl class="rows">
+        <div class="row"><dt>Design &amp; modeling</dt><dd>AutoCAD (very good), Revit (very good)</dd></div>
+        <div class="row"><dt>Analysis tools</dt><dd>HAP, Duct Sizer, Pipe Sizer, Elite (working knowledge)</dd></div>
+        <div class="row"><dt>Programming</dt><dd>C# (Revit API add-ins), HTML and JavaScript engineering tools</dd></div>
+        <div class="row"><dt>Standards &amp; codes</dt><dd>ASHRAE, SMACNA, NFPA, IPC</dd></div>
+        <div class="row"><dt>Software</dt><dd>Microsoft Office Suite</dd></div>
+        <div class="row"><dt>Professional</dt><dd>Team collaboration, communication, problem-solving</dd></div>
+      </dl>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <div class="item">
+        <h3>MEP Design Trainee, EngX Course</h3>
+        <span class="meta">September 2024 to April 2025</span>
+        <ul>
+          <li>Trained in the design of complete MEP systems: HVAC, plumbing, firefighting and medical gas.</li>
+          <li>Performed HVAC load calculations and selected indoor and outdoor units. Developed duct layouts with Duct Sizer and chilled-water network designs.</li>
+          <li>Prepared plumbing and firefighting schematics, including sizing with Pipe Sizer.</li>
+          <li>Applied AutoCAD and Revit to practical design and modeling tasks.</li>
+          <li>Kept designs compliant with ASHRAE, SMACNA, NFPA and IPC.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <div class="item"><h3>Graduation Project: Hospital HVAC Design</h3><p class="meta">HVAC system design for a hospital. Graduation project grade: Excellent.</p></div>
+      <div class="item"><h3>Hospital MEP Design, EngX Course</h3><p class="meta">HVAC, plumbing, firefighting and medical gas systems for a hospital building.</p></div>
+      <div class="item"><h3>Residential Villa MEP Design, EngX Course</h3><p class="meta">HVAC, plumbing and firefighting systems for a residential villa.</p></div>
+      <div class="item"><h3>Office Building MEP Design, EngX Course</h3><p class="meta">HVAC, plumbing and firefighting systems for an office building.</p></div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="item">
+        <h3>Bachelor of Mechanical Engineering, Power Engineering</h3>
+        <p>Al-Azhar University, Cairo</p>
+        <span class="meta">September 2019 to July 2026 · Overall grade: Good · Graduation project: Excellent</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <div class="contact">
+        <div class="crow"><span class="k">Phone</span><span class="v">+20 155 991 7698</span><button class="copy" type="button" data-copy="+20 155 991 7698">Copy</button></div>
+        <div class="crow"><span class="k">WhatsApp</span><span class="v">+20 155 991 7698</span><button class="copy" type="button" data-copy="+201559917698">Copy</button></div>
+        <div class="crow"><span class="k">Email</span><span class="v">osma.eng.pro.free@gmail.com</span><button class="copy" type="button" data-copy="osma.eng.pro.free@gmail.com">Copy</button></div>
+        <div class="crow"><span class="k">Location</span><span class="v">Abasia, Cairo, Egypt</span><span></span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>Seif-Elnaser Group · Cairo, Egypt</footer>
+</div>
+
+<script>
+(function () {
+  var splash = document.getElementById('splash');
+  if (splash) {
+    splash.addEventListener('animationend', function (e) {
+      if (e.animationName === 'splashOut') splash.remove();
+    });
+  }
+  document.querySelectorAll('.copy').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var text = b.getAttribute('data-copy'), old = b.textContent;
+      function done(ok) { b.textContent = ok ? 'Copied' : 'Select and copy'; setTimeout(function () { b.textContent = old; }, 1600); }
+      try {
+        navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(false); });
+      } catch (err) { done(false); }
+    });
+  });
+})();
+</script>
