@@ -1,0 +1,16 @@
+{
+  "id": "/",
+  "name": "Eng. Osama Seif-Elnaser | Mechanical Engineer",
+  "short_name": "Seif-Elnaser",
+  "description": "Personal page of Eng. Osama Seif-Elnaser, Mechanical Engineer (HVAC & MEP), with engineering tools.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#F4F6FB",
+  "theme_color": "#0B2A5B",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
